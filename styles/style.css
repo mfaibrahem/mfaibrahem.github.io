@@ -1,0 +1,937 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Raleway', sans-serif;
+  line-height: 1.8;
+  color: #222;
+  overflow-x: hidden;
+}
+
+::selection {
+  color: yellow;
+  background: transparent;
+}
+
+::-moz-selection {
+  color: yellow;
+  background: transparent;
+}
+
+::-webkit-scrollbar {
+	width: 12px;
+}
+
+::-webkit-scrollbar-track {
+	box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	border-radius: 10px;
+	background-color: #fff;
+}
+
+::-webkit-scrollbar-thumb {
+	border-radius: 10px;
+  box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+  background-color: #ccc;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #aaa;
+}
+
+
+
+img {
+  max-width: 100%;
+}
+
+h1,h2,h3,h4,h5,p {
+  margin: 0;
+}
+
+p {
+  font-weight: 300;
+  font-size: 1.1em;
+}
+
+h2, h3 {
+  font-weight: 300;
+}
+
+a {
+  text-decoration: none;
+}
+
+header {
+  min-height: 260px;
+}
+
+.div-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-image: url("../images/beach-small.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  width: 100%;
+}
+
+ul.ul-header {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  list-style: none;
+  margin: 0;
+  padding: 10px;
+  background-color: transparent;
+  position: fixed;
+  right: 0;
+  top: 0;
+}
+
+/* ************************************************** */
+/* main header h1 style */
+/* ************************************************** */
+h1.h1-header {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  /* font-family: 'Comfortaa', cursive; */
+  font-family: 'Work Sans', sans-serif;
+  text-shadow: 1px 2px 8px rgba(0,0,0,.3);
+  color: #333;
+  /* text-shadow: 0 8px 16px rgba(14, 116, 145, 0.2),0 3px 10px rgba(133, 204, 224, .19); */
+  font-size: 4.5em;
+  font-weight: 200;
+  letter-spacing: 1px;
+  text-align: center;
+  margin: 0;
+}
+
+.h1-header .first-h1 {
+  opacity: 1;
+  animation: first-h1 1s cubic-bezier(.6,-0.53,.41,1.42);
+}
+
+@keyframes first-h1 {
+  0% {
+    opacity: 0;    
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.h1-header .second-h1 {
+  opacity: 1;
+  animation: second-h1 2s cubic-bezier(.6,-0.53,.41,1.42);
+}
+@keyframes second-h1 {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.h1-header .third-h1 {
+  opacity: 1;
+  animation: third-h1 3s cubic-bezier(.6,-0.53,.41,1.42);
+}
+@keyframes third-h1 {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.h1-header .fourth-h1 {
+  opacity: 1;
+  margin-right: .2em;
+  animation: fourth-h1 4s cubic-bezier(.6,-0.53,.41,1.42);
+}
+@keyframes fourth-h1 {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.h1-header .fifth-h1 {
+  opacity: 1;
+  animation: fifth-h1 5s cubic-bezier(.6,-0.53,.41,1.42);
+}
+@keyframes fifth-h1 {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.h1-header .sixth-h1 {
+  opacity: 1;
+  animation: sixth-h1 6s cubic-bezier(.6,-0.53,.41,1.42);
+}
+@keyframes sixth-h1 {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.h1-header .seventh-h1 {
+  opacity: 1;
+  animation: seventh-h1 7s cubic-bezier(.6,-0.53,.41,1.42);
+}
+@keyframes seventh-h1 {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+/* ****************************************************** */
+/* end main header style  */
+/* ****************************************************** */
+
+
+/* ***************************************************** */
+/* sub header h3 style */
+/* ***************************************************** */
+h1.h1-header + h3:first-of-type {
+  margin-bottom: 1.5em;
+}
+
+h3.h3-header {
+  /* display: flex;
+  flex-wrap: wrap;
+  justify-content: center; */
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 400;
+  margin: 0;
+  font-size: 1.5em;
+  text-align: center;
+  color: #222;
+  opacity: 1;
+  animation: h3-animation 6s cubic-bezier(.6,-0.53,.41,1.42);
+}
+
+@keyframes h3-animation {
+  0% {
+    opacity: 0;
+    transform: translate(0, 60px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+/* ************************************************ */
+/* end sub header style */
+/* *********************************************** */
+
+
+/* menue toggle button */
+.ul-header > li:first-child {
+  /* margin-right: 89px; */
+  z-index: 100;
+  transition: transform 300ms;
+}
+
+.lines {
+  width: 32px;
+  min-height: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+
+.line {
+  width: 100%;
+  height: 4px;
+  margin-bottom: 2px;
+  background: #444;
+  border-radius: 6px;
+  cursor: pointer;
+  transform: rotate(0);
+  transition: transform 400ms;
+}
+
+.first-line {
+  /* transform: translate(-200px, 0) rotate(45deg); */
+  transform: rotate(45deg);
+  position: absolute;
+}
+
+.middle-line {
+  display: none;
+}
+
+.last-line {
+  /* transform: translate(-200px, 0) rotate(-45deg); */
+  transform: rotate(-45deg);
+  position: absolute;
+}
+
+.lines-off {
+  transform: translate(-64px, 0);
+}
+
+/* toggle background of the list */
+.x-list {
+  z-index: 100;
+  min-width: 160px;
+  border-radius: 2px;
+  background: transparent;
+  /* box-shadow: 0 8px 16px 0 rgba(133, 204, 224,0.2),0 6px 20px 0 rgba(133, 204, 224,.19); */
+  transition: background .2s;
+}
+.x-list ul {
+  list-style: none;
+  padding: 0;
+}
+.y-list {
+  background: rgb(38, 148, 179);
+  box-shadow: 0 8px 16px 0 rgba(38, 148, 179,0.2),0 6px 20px 0 rgba(38, 148, 179,.19);
+}
+
+/* toggle the list itself */
+.list-off {
+  font-size: 1em;
+  color: #FFF;
+  padding: 8px 8px;
+  text-align: center;
+  z-index: 100;
+  display: none;
+  /* visibility: hidden;
+  opacity: 0;
+  transition: visibility .4s, opacity .6s; */
+}
+
+.list-on {
+  display: block;
+  /* visibility: visible;
+  opacity: 1;
+  display: block;
+  padding: 4px 16px;
+  transition: background .4s; */
+}
+
+
+/* ********************************************** */
+/* ********************************************** */
+/* comon side panel styles */
+/* geography side panel */
+/* therapies side panel */
+/* Human History side panel */
+/* tourism side panel */
+/* chemical side panel */
+/* ********************************************** */
+/* ********************************************** */
+.li-header {
+  position: relative;
+  transition: 1s;
+  z-index: 100;
+}
+
+.li-header > a:hover {
+  background: #07586e;
+}
+
+.li-header > ul {
+  position: absolute;
+  top: 0;
+  right: 160px;
+  overflow: hidden;
+  background: #004ef7;
+  width: 0;
+  height: 0;
+  transition: .4s;
+}
+
+.li-header:hover > ul.ul-therapies {
+  width: 140px;
+  height: auto;
+}
+.li-header:hover >ul.ul-geography,
+.li-header:hover > ul.ul-human,
+.li-header:hover > ul.ul-tourism,
+.li-header:hover > ul.ul-chemical {
+  width: 156px;
+  height: auto;
+  /* height: calc(100 * 5); */
+}
+
+
+.li-header > ul > li > a {
+  color: #fff;
+  padding: 8px 14px;
+  text-align: center;
+}
+
+.li-header > ul > li > a:hover {
+  background:#1040a8;
+}
+
+
+/* .ul-therapies::before,
+.ul-human::before,
+.ul-tourism::before,
+.ul-chemical::before
+{
+  content: "";
+  display: block;
+  border-right: 15px solid #07586e;
+  border-left: 15px solid transparent;
+  border-top: 21px solid transparent;
+  border-bottom: 21px solid transparent;
+  position: absolute;
+  right: -15px;
+} */
+
+
+
+
+ /* toggle side panel when clicked */
+ li.geography-list > ul.hide-side-panel,
+ li.therapies-list > ul.hide-side-panel,
+ li.human-list > ul.hide-side-panel,
+ li.tourism-list > ul.hide-side-panel,
+ li.chemical-list > ul.hide-side-panel {
+   display: none;
+ }
+
+/* *********************************************** */
+/* *********************************************** */
+/* end of side panel style */
+/* *********************************************** */
+/* ************************************************ */
+
+
+
+
+/* geography container */
+
+.geography-header {
+  margin: 0 0 2em .8em;
+}
+
+.geography-img,
+.therapies-img {
+  max-width: 90%;
+  height: auto;
+  margin: 0 0 0 1.5em;
+  box-shadow: 0 8px 16px 0 rgba(51, 51, 51, 0.2),0 6px 20px 0 rgba(51, 51, 51,.19);
+}
+
+div.p-div {
+  padding: 0 1.5em 0;
+  max-width: 95%;
+}
+
+.geography-sub-header {
+  margin-top: 2em;
+  margin-left: .8em;
+}
+
+.hidden-text {
+  max-height: 0;
+  max-width: 0;
+  overflow: hidden;
+  /* transition: all 1s; */
+}
+.revealed-text {
+  max-width: 100%;
+  max-height: 1000px;
+  animation: text-animation 1s ease-in-out;
+  /* overflow: auto; */
+}
+
+@keyframes text-animation {
+  from {
+    max-height: 0;
+  }
+  to {
+    max-height: 1000px;
+  }
+}
+
+
+.hide-button {
+  padding: .5em 0;
+  color: #fff;
+  width: 128px;
+  text-align: center;
+  cursor: pointer;
+  background: #4caf50;
+  border-radius: 3px;
+  transition: all .5s;
+}
+
+.hide-button:hover {
+    box-shadow: 0 8px 16px 0 rgba(51, 51, 51, 0.2),0 6px 20px 0 rgba(51, 51, 51,.19);
+    /* box-shadow: 0px 2px 8px 0 rgba(255, 255, 255, 0.212); */
+    transform: scale(1.1);
+}
+
+.animate-btn {
+  background: tomato;
+  /* animation-name: btn-animation;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out; */
+  animation: btn-animation 1s cubic-bezier(.6,-0.53,.41,1.42);
+}
+@keyframes btn-animation {
+  from {
+    transform: rotateX(-120deg) rotateY(60deg) rotateZ(90deg) scale(.5);
+    
+  }
+  to {
+    transform: rotateX(0) rotateY(0) rotateZ(0) scale(1);
+  }
+}
+
+.hidden-text-early,
+.hidden-text-water,
+.hidden-text-rock,
+.hidden-text-therapies {
+  max-width: 0;
+  max-height: 0;
+  overflow: hidden;
+}
+
+.revealed-text-early,
+.revealed-text-water,
+.revealed-text-rock,
+.revealed-text-therapies {
+  max-width: 100%;
+  max-height: 1000px;
+  animation: text-animation 1s ease-in-out;
+}
+.hide-text-early,
+.hide-text-water,
+.hide-text-rock,
+.hide-text-therapies {
+  cursor: pointer;
+  color: tomato;
+}
+
+.hide-text-early:hover,
+.hide-text-water:hover,
+.hide-text-rock:hover,
+.hide-text-therapies:hover {
+  color: yellow;
+}
+
+.less,
+.less-early,
+.less-water,
+.less-rock,
+.less-therapies,
+.hide {
+  display: none;
+}
+
+.view {
+  display: block;
+}
+
+
+
+
+
+
+/* *************************************************************************************************** */
+/* **************************************************************************************************** */
+/* **************************************************************************************************** */
+/* *****************                Media Queries           **********************/
+/* **************************************************************************************************** */
+/* **************************************************************************************************** */
+/* **************************************************************************************************** */
+/* **************************************************************************************************** */
+
+
+/* media queries */
+@media (min-width: 830px) {
+
+  .div-header {
+    /* background-image: url("../images/conan.jpg"); */
+    display: block;
+    flex-direction: unset;
+    justify-content: unset;
+    position: relative;
+  }
+/* *************************************************** */
+/* slide images */
+/* *************************************************** */
+  .slide-container {
+    width: 100%;
+    min-height: 100vh;
+  }
+  .slide-div {
+    display: none;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    min-height: 100vh;
+  }
+  .slide-img-1 {
+    background-image: url("../images/conan.jpg");
+  }
+  .slide-img-2 {
+    background-image: url("../images/beach.jpg");
+  }
+  .slide-img-3 {
+    background-image: url("../images/islands.jpg");
+  }
+  .slide-img-4 {
+    background-image: url("../images/saltLake.jpg");
+  }
+/* *************************************************** */
+/* end slide images */
+/* *************************************************** */
+
+/* main nav bar */
+  ul.ul-header {
+    display: block;
+    flex-direction: unset;
+    flex-wrap: unset;
+    align-items: unset;
+    position: absolute;
+    right: 0;
+    top: 0;
+    left: 0;
+    padding: 0;
+    z-index: 100;
+  }
+
+  .ul-header > li:first-child {
+    display: none;
+  }
+
+
+  li.x-list {
+    background: #333;
+    box-shadow: 0 8px 16px 0 rgba(51, 51, 51, 0.2),0 6px 20px 0 rgba(51, 51, 51,.19);
+  }
+
+  li.x-list > ul.x-ul {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    min-height: 50px;
+    max-width: 100%;
+  }
+
+  .li-header {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .li-header a {
+    display: block;
+    min-height: 100%;
+    font-size: 1em;
+    padding: 8px 10px;
+  }
+
+  .li-header > a:hover {
+    background: #333;
+    color: #ccc;
+    cursor: pointer;
+  }
+
+  /* .li-header > a:hover::after {
+    content: "";
+    position: absolute;
+    display: block;
+    border-top: 15px solid #004ef7;
+    border-right: 20px solid transparent;
+    border-bottom: 15px solid yellow;
+    border-left: 20px solid transparent;
+    bottom: -15px;
+    left: 50%;
+    transform: translate(-50%, 0);
+  } */
+
+  li.li-header > ul {
+    position: absolute;
+    top: 50px;
+    right: unset;
+    background: #fff;
+    box-shadow: 0 8px 16px 0 rgba(255, 255, 255, 0.2),0 6px 20px 0 rgba(255, 255, 255,.19);
+  }
+
+  .li-header > ul > li > a {
+    min-height: 50px;
+    color: #333;
+  }
+  .li-header > ul > li > a:hover {
+    color: #fff;
+    background: #333;
+  }
+
+  .li-header:hover > ul.ul-geography {
+    min-width: auto;
+    height: calc(100% * 6.9);
+  }
+
+  .li-header:hover > ul.ul-therapies {
+    min-width: auto;
+    height: calc(100% * 3);
+  }
+  
+  .li-header:hover > ul.ul-human {
+    min-width: auto;
+    height: calc(100% * 4);
+  }
+
+  .li-header:hover > ul.ul-tourism,
+  .li-header:hover > ul.ul-chemical {
+    min-width: auto;
+    height: calc(100% * 4.4);
+  }
+
+
+  /* main h1 and sub h3 */
+  h1.h1-header {
+    font-size: 4em;
+  }
+  h3.h3-header {
+    font-size: 1.2em;
+  }
+
+  div.header-text {
+    position: absolute;
+    bottom: 50%;
+    right: 50%;
+    transform: translate(50%, 50%);
+    animation: header-animation 2s cubic-bezier(.6,-0.53,.41,1.42);
+  }
+  
+  @keyframes header-animation {
+    from {
+      transform: translate(0, 0);
+    }
+    to {
+      transform: translate(50%, 50%);
+    }
+  }
+  /* end main h1 and sub h3 */
+
+
+
+
+
+/* Geography Container */
+
+  .geography-container,
+  .therapies-container,
+  .human-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 250px;
+    padding: 3em 0;
+  }
+
+  .geography-container {
+    color: #fff;
+    background: linear-gradient(to right, #373B44, #4286f4);
+  }
+
+  .therapies-container {
+    color: #fff;
+    /* background: linear-gradient(to right, #4364F7, #6FB1FC); */
+    background: linear-gradient(to right, #11998e, #38ef7d);
+  }
+
+  .human-container {
+    color: #000;
+    background: linear-gradient(to right, #ee9ca7, #ffdde1)
+  }
+
+  .human-container h2,
+  .human-container h3 {
+    color: #000;
+  }
+  .geo-col-1 {
+    flex: 1 100%;
+  }
+
+  .geo-col-2,
+  .geo-col-3,
+  .geo-col-4,
+  .geo-col-5 {
+    flex: 1 50%;
+  }
+
+  .geo-col-6,
+  .geo-col-7 {
+    flex: .5 90%;
+  }
+  .geography-img,
+  .therapies-img {
+    max-width: 100%;
+    margin: 0;
+  }
+
+
+  .geo-col-1 {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .p-col-1-1,
+  .img-col-1 {
+    flex: 1 50%;
+  }
+
+  div.p-col-2-1 > p {
+    margin-top: 0;
+  }
+
+  .therapies-col-2,
+  .therapies-col-3,
+  .therapies-col-4,
+  .human-col-1,
+  .human-col-2,
+  .human-col-3,
+  .human-col-4 
+  {
+    flex: 1 100%;
+  }
+
+  /* *********************************************************** */
+  /************************ handle scrolling********************* */
+  /* ************************************************************ */
+  /* scroll active classes */
+
+
+  /* animate on scroll active text */
+  .active-text {
+    animation: 2s active-text-animation ease-out;
+  }
+
+  @keyframes active-text-animation {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  /* animate on scroll active img */
+  .active-img {
+    animation: 1s active-img-animation cubic-bezier(.6,-0.53,.41,1.42);
+  }
+
+  @keyframes active-img-animation {
+    from {
+      transform: rotateY(60deg) translate(50%, 0);
+    }
+    to {
+      transform: rotateY(0) translate(0,0);
+    }
+  }
+
+  /* slide text right */
+  .slide-right-text {
+    animation: slide-right-animation 2s cubic-bezier(.6,-0.53,.41,1.42);
+  }
+  @keyframes slide-right-animation {
+    from {
+      transform: translate(-100px,0);
+      opacity: 0;
+    }
+    to {
+      transform: translate(0,0);
+      opacity: 1;
+    }
+  }
+
+  /* slide text top */
+  .slid-bottom-text {
+    animation: slide-bottom-animation 1s ease-in-out 2 alternate;
+  }
+  @keyframes slide-bottom-animation {
+    0% {
+      transform: translate(0, 0) rotateY(0);
+      opacity: .95;
+    }
+    33% {
+      transform: translate(0,-20px) rotateY(-10deg);
+      opacity: .8;
+    }
+    100% {
+      transform: translate(0, 20px) rotateY(10deg);
+      opacity: .95;
+    }
+  }
+  /* *********************************************************** */
+  /************************ end handle scrolling********************* */
+  /* ************************************************************ */
+
+  h2, h3 {
+    color: yellow;
+  }
+
+}
+
+@media (min-width: 1025px) {
+  
+  h1.h1-header {
+    font-size: 5.6em;
+  }
+
+  h3.h3-header {
+    font-size: 1.5em;
+  }
+
+
+  li.x-list > ul.x-ul {
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    min-height: 50px;
+    max-width: 85%;
+  }
+
+
+  .geography-img,
+  .therapies-img {
+    max-width: 85%;
+  }
+
+
+
+  .geo-col-6,
+  .geo-col-7 {
+    flex: 1 50%;
+  }
+  
+}
+
+
