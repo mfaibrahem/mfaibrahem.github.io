@@ -47,6 +47,7 @@ function removeGeoUl(e) {
       e.target.classList.contains('div-header') ||
       e.target.parentElement.classList.contains('div-header') ||
       e.target.parentElement.parentElement.classList.contains('div-header') ||
+      e.target.parentElement.parentElement.parentElement.classList.contains('li-header') ||
       e.target.parentElement.classList.contains('phone-lines') ||
       e.target.parentElement.classList.contains('therapies-list') ||
       e.target.parentElement.classList.contains('human-list') || 
@@ -68,6 +69,7 @@ function removeTherpUl(e) {
       e.target.classList.contains('div-header') ||
       e.target.parentElement.classList.contains('div-header') ||
       e.target.parentElement.parentElement.classList.contains('div-header') ||
+      e.target.parentElement.parentElement.parentElement.classList.contains('li-header') ||
       e.target.parentElement.classList.contains('phone-lines') ||
       e.target.parentElement.classList.contains('geography-list') ||
       e.target.parentElement.classList.contains('human-list') || 
@@ -87,6 +89,7 @@ function removeHumanUl(e) {
       e.target.classList.contains('div-header') ||
       e.target.parentElement.classList.contains('div-header') ||
       e.target.parentElement.parentElement.classList.contains('div-header') ||
+      e.target.parentElement.parentElement.parentElement.classList.contains('li-header') ||
       e.target.parentElement.classList.contains('phone-lines') ||
       e.target.parentElement.classList.contains('geography-list') ||
       e.target.parentElement.classList.contains('therapies-list') || 
@@ -106,6 +109,7 @@ function removeTourismUl(e) {
       e.target.classList.contains('div-header') ||
       e.target.parentElement.classList.contains('div-header') ||
       e.target.parentElement.parentElement.classList.contains('div-header') ||
+      e.target.parentElement.parentElement.parentElement.classList.contains('li-header') ||
       e.target.parentElement.classList.contains('phone-lines') ||
       e.target.parentElement.classList.contains('geography-list') ||
       e.target.parentElement.classList.contains('therapies-list') || 
@@ -124,6 +128,7 @@ function removeChemUl(e) {
       e.target.classList.contains('div-header') ||
       e.target.parentElement.classList.contains('div-header') ||
       e.target.parentElement.parentElement.classList.contains('div-header') ||
+      e.target.parentElement.parentElement.parentElement.classList.contains('li-header') ||
       e.target.parentElement.classList.contains('phone-lines') ||
       e.target.parentElement.classList.contains('geography-list') ||
       e.target.parentElement.classList.contains('therapies-list') || 
