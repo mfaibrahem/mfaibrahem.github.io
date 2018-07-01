@@ -875,21 +875,19 @@ div.p-div {
   .human-container h3 {
     color: #000;
   }
-  .geo-col-1 {
+  .geo-col-1,
+  .go-col-2,
+  .geo-col-3,
+  .geo-col-6,
+  .geo-col-7 {
     flex: 1 100%;
   }
 
-  .geo-col-2,
-  .geo-col-3,
   .geo-col-4,
   .geo-col-5 {
     flex: 1 50%;
   }
 
-  .geo-col-6,
-  .geo-col-7 {
-    flex: .5 90%;
-  }
   .geography-img,
   .therapies-img {
     max-width: 100%;
@@ -1030,10 +1028,7 @@ div.p-div {
     max-width: 85%;
   }
 
-  .geo-col-6,
-  .geo-col-7 {
-    flex: 1 50%;
-  }
+
   
 }
 
