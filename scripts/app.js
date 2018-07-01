@@ -279,6 +279,25 @@ function revealTherapiesFun() {
   document.querySelector('.less-therapies').classList.toggle('view');
 }
 
+
+
+// triggar modal
+
+const UItriggarModal = document.querySelector('.modal-triggar');
+const UIxModal = document.querySelector('.x-modal');
+UIxModal.addEventListener('click', toggleModalFun);
+UItriggarModal.addEventListener('click', toggleModalFun);
+function toggleModalFun() {
+  document.querySelector('.modal').classList.toggle('toggle-modal');
+}
+
+
+
+
+
+
+
+
 // ********************************************************
 // ******************animate on scroll*********************
 // *******************************************************
