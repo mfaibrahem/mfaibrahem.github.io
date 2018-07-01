@@ -643,7 +643,8 @@ div.p-div {
     z-index: 1001;
   }
 
-  .modal-triggar {
+  .modal-triggar-biblical,
+  .modal-triggar-greek {
     display: block;
     padding: 2em;
     background: #fff;
@@ -652,11 +653,13 @@ div.p-div {
     cursor: pointer;
     transition: all .3s;
   }
-  .modal-triggar:hover {
+  .modal-triggar-biblical:hover,
+  .modal-triggar-greek:hover {
     box-shadow: 1px 2px 12px rgba(0, 0, 0, .3);
     transform: scale(1.01);
   }
-  .modal {
+  .modal-biblical,
+  .modal-greek {
     position: fixed;
     top: 0;
     left: 0;
@@ -667,6 +670,7 @@ div.p-div {
     overflow: auto;
     background: rgba(0, 0, 0, .6);
     transform: translate(0, -50%);
+    z-index: 2000;
     transition: all .5s ease-in-out;
   }
   .toggle-modal {
@@ -675,27 +679,18 @@ div.p-div {
     visibility: visible;
   }
   .modal-content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     width: 90%;
-    padding: 0 3em 2em;
+    margin: auto;
+    min-height: 100%;
+    padding: 1em 3em 2em;
     background: #129b8e;
     color: #fff;
     border-radius: 8px;
     font-size: 1.2em;
-    animation: content-animation 1s ease-in-out;
   }
-  @keyframes content-animation {
-    from {
-      transform: translate(0, 50%);
-    }
-    to {
-      transform: translate(0, 0);
-    }
-  }
-  .x-modal {
+
+  .x-biblical-modal,
+  .x-greek-modal {
     width: 32px;
     height: 32px;
     float: right;
@@ -723,8 +718,10 @@ div.p-div {
   .second-x-modal {
     transform: rotate(45deg);
   }
-  .x-modal:hover .first-x-modal,
-  .x-modal:hover .second-x-modal {
+  .x-biblical-modal:hover .first-x-modal,
+  .x-biblical-modal:hover .second-x-modal,
+  .x-greek-modal:hover .first-x-modal,
+  .x-greek-modal:hover .second-x-modal {
     background: tomato;
     transition: .5s;
   }

@@ -283,12 +283,21 @@ function revealTherapiesFun() {
 
 // triggar modal
 
-const UItriggarModal = document.querySelector('.modal-triggar');
-const UIxModal = document.querySelector('.x-modal');
-UIxModal.addEventListener('click', toggleModalFun);
-UItriggarModal.addEventListener('click', toggleModalFun);
-function toggleModalFun() {
-  document.querySelector('.modal').classList.toggle('toggle-modal');
+const UItriggarModalBiblical = document.querySelector('.modal-triggar-biblical');
+const UIxBiblicalModal = document.querySelector('.x-biblical-modal');
+UIxBiblicalModal.addEventListener('click', toggleBiblicalModalFun);
+UItriggarModalBiblical.addEventListener('click', toggleBiblicalModalFun);
+
+function toggleBiblicalModalFun() {
+  document.querySelector('.modal-biblical').classList.toggle('toggle-modal');
+}
+
+const UItriggarModalGreek = document.querySelector('.modal-triggar-greek');
+const UIxGreekModal = document.querySelector('.x-greek-modal');
+UItriggarModalGreek.addEventListener('click', toggleGreekModalFun);
+UIxGreekModal.addEventListener('click', toggleGreekModalFun);
+function toggleGreekModalFun() {
+  document.querySelector('.modal-greek').classList.toggle('toggle-modal');
 }
 
 
