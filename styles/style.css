@@ -993,11 +993,15 @@ div.p-div {
   .therapies-col-3,
   .therapies-col-4,
   .human-col-1,
-  .human-col-2,
-  .human-col-3,
-  .human-col-4 
+  .human-col-2
   {
     flex: 1 100%;
+  }
+  .human-col-3 {
+    flex: 1 40%;
+  }
+  .human-col-4 {
+    flex: 1 60%;
   }
 
   /* *********************************************************** */

@@ -140,38 +140,6 @@ function removeChemUl(e) {
 }
 
 
-
-
-
-
-// event delegation on media query min-width 769px
-document.body.addEventListener('click', toggleMenue);
-
-function toggleMenue(e) {
-  if (e.target.parentElement.className == 'lines' || e.target.className == 'lines' ||
-          e.target.parentElement.classList.contains('li-header') ||
-          e.target.classList.contains('side-geography-link') ||
-          e.target.classList.contains('side-therapies-link') ||
-          e.target.classList.contains('side-human-link') ||
-          e.target.classList.contains('side-tourism-link') ||
-          e.target.classList.contains('side-chemical-link')
-      ) {
-        // toggle the menue icon list to applay the translate style 
-      document.querySelector('.ul-header > li:nth-child(2)').classList.toggle('lines-off');
-          // toggle the menue icon lines to applay the off icon
-      document.querySelector('.line:first-child').classList.toggle('first-line');
-      document.querySelector('.line:nth-child(2)').classList.toggle('middle-line');
-      document.querySelector('.line:nth-child(3)').classList.toggle('middle-line');
-      document.querySelector('.line:last-child').classList.toggle('last-line');
-          // toggle the dropdown list to applay the display style on each link
-      document.querySelectorAll('.ul-header a').forEach(function(link) {
-        link.classList.toggle('list-on');
-                              });
-          // toggle the background of the list
-      document.querySelector('.x-list').classList.toggle('y-list');
-  }
-}
-
 // toggle side panel when clicked
 document.querySelector('.ul-header').addEventListener('click', hideSidePanel);
 function hideSidePanel(e) {
