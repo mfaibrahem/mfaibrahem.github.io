@@ -5,6 +5,7 @@
 body {
   margin: 0;
   font-family: 'Raleway', sans-serif;
+  font-size: 1em;
   line-height: 1.8;
   color: #222;
   overflow-x: hidden;
@@ -41,7 +42,6 @@ body {
 }
 
 
-
 img {
   max-width: 100%;
 }
@@ -50,66 +50,243 @@ h1,h2,h3,h4,h5,p {
   margin: 0;
 }
 
+h2, h3 {
+  font-weight: 300;
+}
+
 p {
   font-weight: 300;
   font-size: 1.1em;
-}
-
-h2, h3 {
-  font-weight: 300;
 }
 
 a {
   text-decoration: none;
 }
 
-header {
-  min-height: 260px;
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
 
-.div-header {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  background-image: url("../images/beach-small.jpg");
-  background-repeat: no-repeat;
+div.div-header {
+  height: 100vh;
+  width: 100%;
+  background-image: url("../images/phone-img.jpg");
   background-size: cover;
   background-position: center;
-  min-height: 100vh;
-  width: 100%;
 }
 
-ul.ul-header {
+.ul-header {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   align-items: flex-end;
-  list-style: none;
-  margin: 0;
-  padding: 10px;
-  background-color: transparent;
-  position: fixed;
-  right: 0;
-  top: 0;
+  z-index: 1001;
 }
+
+
+/* toggle nav menue for phones */
+.phone-lines {
+  width: 32px;
+  min-height: 32px;
+  cursor: pointer;
+  position: relative;
+  margin: 2em 1.5em 1.5em 0;
+  transition: all .5s;
+}
+
+.phone-lines-off {
+  margin-right: calc(1em + 57px);
+}
+
+.phone-line {
+  width: 100%;
+  height: 6px;
+  margin-bottom: 2px;
+  background: #000;
+  border-radius: 3px;
+  transform: rotate(0);
+  opacity: 1;
+  transition: all .5s;
+}
+.phone-line-off {
+  position: absolute;
+  top: 50%;
+  left: 0;
+}
+.phone-line-off:nth-child(1) {
+  visibility: hidden;
+  transform: rotate(90deg);
+  opacity: 0;
+}
+.phone-line-off:nth-child(4) {
+  visibility: hidden;
+  opacity: 0;
+  transform: rotate(-90deg);
+}
+.phone-line-off:nth-child(2) {
+  transform: rotate(-45deg);
+}
+.phone-line-off:nth-child(3) {
+  transform: rotate(45deg);
+}
+
+
+/* toggle x-list when the menu icon is clicked */
+.x-list {
+  opacity: 0;
+  visibility: hidden;
+  transition: .5s;
+  z-index: 1001;
+}
+
+.x-list-off::before {
+  content: "";
+  position: absolute;
+  top: -20px;
+  /* right: calc(57px + 1em); */
+  right: 57px;
+  border-bottom: 20px solid rgba(0, 0, 0, .7);
+  border-right: 15px solid transparent;
+  border-left: 15px solid transparent;
+}
+.x-list-off {
+  transform: translate(-1em, 0);
+  opacity: 1;
+  visibility: visible;
+}
+
+.li-header {
+  position: relative;
+}
+
+.x-ul {
+  background: rgba(0, 0, 0, .7);
+  border-radius: 8px;
+  text-align: center;
+}
+
+ul.x-ul a {
+  padding: 8px 12px;
+}
+
+.li-header a {
+  cursor: pointer;
+  display: block;
+  color: #fff;
+}
+.li-header a:hover {
+  color: #ccc;
+}
+.li-header > ul > li > a {
+  color: #fff;
+}
+
+.ul-geography::before,
+.ul-therapies::before,
+.ul-human::before,
+.ul-tourism::before,
+.ul-chemical::before {
+  position: absolute;
+  top: 2px;
+  left: 100%;
+  /* transform: translate(0, -50%); */
+  content: "";
+  border-top: 20px solid transparent;
+  border-left: 14px solid rgba(0, 0, 0, .8);
+  border-bottom: 20px solid transparent;
+  /* border-right: 14px solid blue; */
+}
+
+.ul-geography,
+.ul-therapies,
+.ul-human,
+.ul-tourism,
+.ul-chemical {
+  background: rgba(0, 0, 0, .8);
+  border-radius: 8px;
+  border-top-right-radius: 0;
+  position: absolute;
+  top: 0;
+  right: calc(100% + 14px);
+  visibility: hidden;
+  opacity: 0;
+  height: 0;
+  text-align: center;
+  z-index: 1001;
+  width: 100%;
+  transition: all .5s;
+}
+
+
+.add-geography,
+.add-therapies,
+.add-human,
+.add-tourism,
+.add-chemical {
+  visibility: visible;
+  opacity: 1;
+  width: 100%;
+}
+.add-geography {
+  height: calc(100% * 6.6);
+}
+.add-therapies {
+  height: calc(100% * 3);
+}
+.add-human {
+  height: calc(100% * 4);
+}
+.add-tourism {
+  height: calc(100% * 4.8);
+}
+.add-chemical {
+  height: calc(100% * 4.8);
+}
+
+
+
+
 
 /* ************************************************** */
 /* main header h1 style */
 /* ************************************************** */
+div.header-text {
+  color: #fff;
+  position: absolute;
+  bottom: 50%;
+  right: 50%;
+  transform: translate(50%, 50%);
+  animation: header-animation 2s cubic-bezier(.6,-0.53,.41,1.42);
+}
+
+@keyframes header-animation {
+  from {
+    transform: translate(0, 0);
+  }
+  to {
+    transform: translate(50%, 50%);
+  }
+}
+
 h1.h1-header {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  /* font-family: 'Comfortaa', cursive; */
   font-family: 'Work Sans', sans-serif;
   text-shadow: 1px 2px 8px rgba(0,0,0,.3);
-  color: #333;
-  /* text-shadow: 0 8px 16px rgba(14, 116, 145, 0.2),0 3px 10px rgba(133, 204, 224, .19); */
-  font-size: 4.5em;
   font-weight: 200;
+  font-size: 3em;
   letter-spacing: 1px;
   text-align: center;
   margin: 0;
+}
+
+.logo {
+  position: absolute;
+  top: -1em;
+  z-index: 1001;
 }
 
 .h1-header .first-h1 {
@@ -217,15 +394,11 @@ h1.h1-header + h3:first-of-type {
 }
 
 h3.h3-header {
-  /* display: flex;
-  flex-wrap: wrap;
-  justify-content: center; */
   font-family: 'Work Sans', sans-serif;
   font-weight: 400;
+  font-size: 1em;
   margin: 0;
-  font-size: 1.5em;
   text-align: center;
-  color: #222;
   opacity: 1;
   animation: h3-animation 6s cubic-bezier(.6,-0.53,.41,1.42);
 }
@@ -244,189 +417,28 @@ h3.h3-header {
 /* end sub header style */
 /* *********************************************** */
 
-
-/* menue toggle button */
-.ul-header > li:first-child {
-  /* margin-right: 89px; */
-  z-index: 100;
-  transition: transform 300ms;
-}
-
-.lines {
-  width: 32px;
-  min-height: 40px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  position: relative;
-}
-
-.line {
-  width: 100%;
-  height: 4px;
-  margin-bottom: 2px;
-  background: #444;
-  border-radius: 6px;
-  cursor: pointer;
-  transform: rotate(0);
-  transition: transform 400ms;
-}
-
-.first-line {
-  /* transform: translate(-200px, 0) rotate(45deg); */
-  transform: rotate(45deg);
-  position: absolute;
-}
-
-.middle-line {
-  display: none;
-}
-
-.last-line {
-  /* transform: translate(-200px, 0) rotate(-45deg); */
-  transform: rotate(-45deg);
-  position: absolute;
-}
-
-.lines-off {
-  transform: translate(-64px, 0);
-}
-
-/* toggle background of the list */
-.x-list {
-  z-index: 100;
-  min-width: 160px;
-  border-radius: 2px;
-  background: transparent;
-  /* box-shadow: 0 8px 16px 0 rgba(133, 204, 224,0.2),0 6px 20px 0 rgba(133, 204, 224,.19); */
-  transition: background .2s;
-}
-.x-list ul {
-  list-style: none;
-  padding: 0;
-}
-.y-list {
-  background: rgb(38, 148, 179);
-  box-shadow: 0 8px 16px 0 rgba(38, 148, 179,0.2),0 6px 20px 0 rgba(38, 148, 179,.19);
-}
-
-/* toggle the list itself */
-.list-off {
-  font-size: 1em;
-  color: #FFF;
-  padding: 8px 8px;
-  text-align: center;
-  z-index: 100;
-  display: none;
-  /* visibility: hidden;
-  opacity: 0;
-  transition: visibility .4s, opacity .6s; */
-}
-
-.list-on {
-  display: block;
-  /* visibility: visible;
-  opacity: 1;
-  display: block;
-  padding: 4px 16px;
-  transition: background .4s; */
-}
-
-
-/* ********************************************** */
-/* ********************************************** */
-/* comon side panel styles */
-/* geography side panel */
-/* therapies side panel */
-/* Human History side panel */
-/* tourism side panel */
-/* chemical side panel */
-/* ********************************************** */
-/* ********************************************** */
-.li-header {
-  position: relative;
-  transition: 1s;
-  z-index: 100;
-}
-
-.li-header > a:hover {
-  background: #07586e;
-}
-
-.li-header > ul {
-  position: absolute;
-  top: 0;
-  right: 160px;
-  overflow: hidden;
-  background: #004ef7;
-  width: 0;
-  height: 0;
-  transition: .4s;
-}
-
-.li-header:hover > ul.ul-therapies {
-  width: 140px;
-  height: auto;
-}
-.li-header:hover >ul.ul-geography,
-.li-header:hover > ul.ul-human,
-.li-header:hover > ul.ul-tourism,
-.li-header:hover > ul.ul-chemical {
-  width: 156px;
-  height: auto;
-  /* height: calc(100 * 5); */
-}
-
-
-.li-header > ul > li > a {
-  color: #fff;
-  padding: 8px 14px;
-  text-align: center;
-}
-
-.li-header > ul > li > a:hover {
-  background:#1040a8;
-}
-
-
-/* .ul-therapies::before,
-.ul-human::before,
-.ul-tourism::before,
-.ul-chemical::before
-{
-  content: "";
-  display: block;
-  border-right: 15px solid #07586e;
-  border-left: 15px solid transparent;
-  border-top: 21px solid transparent;
-  border-bottom: 21px solid transparent;
-  position: absolute;
-  right: -15px;
-} */
-
-
-
-
- /* toggle side panel when clicked */
- li.geography-list > ul.hide-side-panel,
- li.therapies-list > ul.hide-side-panel,
- li.human-list > ul.hide-side-panel,
- li.tourism-list > ul.hide-side-panel,
- li.chemical-list > ul.hide-side-panel {
-   display: none;
- }
-
-/* *********************************************** */
-/* *********************************************** */
-/* end of side panel style */
-/* *********************************************** */
 /* ************************************************ */
+/* main navigation bar (mobile first) */
+/* *********************************************** */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
 
 /* geography container */
-
 .geography-header {
   margin: 0 0 2em .8em;
 }
@@ -484,9 +496,9 @@ div.p-div {
 }
 
 .hide-button:hover {
-    box-shadow: 0 8px 16px 0 rgba(51, 51, 51, 0.2),0 6px 20px 0 rgba(51, 51, 51,.19);
-    /* box-shadow: 0px 2px 8px 0 rgba(255, 255, 255, 0.212); */
-    transform: scale(1.1);
+  box-shadow: 0 8px 16px 0 rgba(51, 51, 51, 0.2),0 6px 20px 0 rgba(51, 51, 51,.19);
+  /* box-shadow: 0px 2px 8px 0 rgba(255, 255, 255, 0.212); */
+  transform: scale(1.1);
 }
 
 .animate-btn {
@@ -566,19 +578,20 @@ div.p-div {
 /* **************************************************************************************************** */
 
 
-/* media queries */
-@media only screen and (min-width: 830px) {
-
+@media only screen and (min-width: 769px) {
   .div-header {
-    /* background-image: url("../images/conan.jpg"); */
-    display: block;
-    flex-direction: unset;
-    justify-content: unset;
-    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    width: 100%;
   }
-/* *************************************************** */
-/* slide images */
-/* *************************************************** */
+  /* *************************************************** */
+  /* slide images */
+  /* *************************************************** */
   .slide-container {
     width: 100%;
     min-height: 100vh;
@@ -603,9 +616,57 @@ div.p-div {
   .slide-img-4 {
     background-image: url("../images/saltLake.jpg");
   }
-/* *************************************************** */
-/* end slide images */
-/* *************************************************** */
+  /* *************************************************** */
+  /* end slide images */
+  /* *************************************************** */ 
+  
+  /* main h1 and sub h3 */
+
+  div.header-text,
+  div.header-text h3 {
+    color: #333;
+  }
+
+  h1.h1-header {
+    font-size: 5em;
+  }
+  h3.h3-header {
+    font-size: 1.5em;
+  }
+  /* end main h1 and sub h3 */
+
+    
+  ul.ul-header {
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 1001;
+  }
+
+
+
+}
+
+/* ******************************************************************************** */
+/* ******************************************************************************** */
+/* ********************************************************************************* */
+@media only screen and (min-width: 993px) {
+
+  .div-header {
+    display: block;
+    flex-direction: unset;
+    justify-content: unset;
+    position: relative;
+  }
+
+  /* main h1 and sub h3 */
+  h1.h1-header {
+    font-size: 6em;
+  }
+  h3.h3-header {
+    font-size: 1.5em;
+  }
+  /* end main h1 and sub h3 */
 
 /* main nav bar */
   ul.ul-header {
@@ -618,81 +679,151 @@ div.p-div {
     top: 0;
     left: 0;
     padding: 0;
-    z-index: 100;
   }
 
-  .ul-header > li:first-child {
+
+  .ul-header > li:nth-of-type(1) {
     display: none;
   }
-
-
-  li.x-list {
-    background: #333;
-    box-shadow: 0 8px 16px 0 rgba(51, 51, 51, 0.2),0 6px 20px 0 rgba(51, 51, 51,.19);
+  
+  /* toggle background of the list */
+  .x-list {
+    visibility: visible;
+    opacity: 1;
+    min-width: 160px;
+    border-radius: 2px;
+    background: transparent;
+    transition: .2s;
+  }
+  .x-list ul {
+    background: transparent;
+    list-style: none;
+    padding: 0;
   }
 
   li.x-list > ul.x-ul {
     display: flex;
-    justify-content: space-around;
+    justify-content: flex-end;
+    align-items: center;
     flex-wrap: wrap;
-    min-height: 50px;
+    min-height: 112px;
     max-width: 100%;
   }
 
   .li-header {
     position: relative;
+    margin-left: 2em;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
     align-items: center;
   }
 
-  .li-header a {
+  .li-header  a {
     display: block;
     min-height: 100%;
-    font-size: 1em;
     padding: 8px 10px;
   }
 
   .li-header > a:hover {
-    background: #333;
-    color: #ccc;
+    background: transparent;
+    color: #000;
     cursor: pointer;
   }
 
-  /* .li-header > a:hover::after {
+  .li-header:hover::after {
     content: "";
     position: absolute;
     display: block;
-    border-top: 15px solid #004ef7;
+    /* border-top: 15px solid #3971eb; */
     border-right: 20px solid transparent;
-    border-bottom: 15px solid yellow;
+    border-bottom: 15px solid rgba(255, 255, 255, .7);
     border-left: 20px solid transparent;
-    bottom: -15px;
-    left: 50%;
+    bottom: -6px;
+    left: 50%; 
     transform: translate(-50%, 0);
-  } */
+    z-index: 1001;
+  }
 
   li.li-header > ul {
     position: absolute;
+    visibility: visible;
+    opacity: 1;
+    position: absolute;
+    width: 0;
+    height: 0;
+    overflow: hidden;
     top: 50px;
     right: unset;
-    background: #fff;
+    border-radius: 6px;
+    background: rgba(255, 255, 255, .8);
     box-shadow: 0 8px 16px 0 rgba(255, 255, 255, 0.2),0 6px 20px 0 rgba(255, 255, 255,.19);
+    transition: .4s;
   }
 
+
+
+
+/* ********************************************** */
+/* ********************************************** */
+/* coumon side panel styles */
+/* geography side panel */
+/* therapies side panel */
+/* Human History side panel */
+/* tourism side panel */
+/* chemical side panel */
+/* ********************************************** */
+/* ********************************************** */
+.li-header {
+  position: relative;
+  transition: 1s;
+}
+
+
+.li-header:hover > ul.ul-therapies {
+  width: 140px;
+}
+.li-header:hover >ul.ul-geography,
+.li-header:hover > ul.ul-human,
+.li-header:hover > ul.ul-tourism,
+.li-header:hover > ul.ul-chemical {
+  width: 156px;
+}
+
+
+
+
+ /* toggle side panel when clicked */
+ li.geography-list > ul.hide-side-panel,
+ li.therapies-list > ul.hide-side-panel,
+ li.human-list > ul.hide-side-panel,
+ li.tourism-list > ul.hide-side-panel,
+ li.chemical-list > ul.hide-side-panel {
+   display: none;
+ }
+/* *********************************************** */
+/* *********************************************** */
+/* end of side panel style */
+/* *********************************************** */
+/* ************************************************ */
+
+
+
+
+
+
   .li-header > ul > li > a {
-    min-height: 50px;
-    color: #333;
+    /* min-height: 50px; */
+    color: #000;
   }
   .li-header > ul > li > a:hover {
     color: #fff;
-    background: #333;
+    background: #1ABC9C;
   }
 
   .li-header:hover > ul.ul-geography {
     min-width: auto;
-    height: calc(100% * 6.9);
+    height: calc(100% * 6.6);
   }
 
   .li-header:hover > ul.ul-therapies {
@@ -708,42 +839,12 @@ div.p-div {
   .li-header:hover > ul.ul-tourism,
   .li-header:hover > ul.ul-chemical {
     min-width: auto;
-    height: calc(100% * 4.4);
+    height: calc(100% * 4.6);
   }
-
-
-  /* main h1 and sub h3 */
-  h1.h1-header {
-    font-size: 4em;
-  }
-  h3.h3-header {
-    font-size: 1.2em;
-  }
-
-  div.header-text {
-    position: absolute;
-    bottom: 50%;
-    right: 50%;
-    transform: translate(50%, 50%);
-    animation: header-animation 2s cubic-bezier(.6,-0.53,.41,1.42);
-  }
-  
-  @keyframes header-animation {
-    from {
-      transform: translate(0, 0);
-    }
-    to {
-      transform: translate(50%, 50%);
-    }
-  }
-  /* end main h1 and sub h3 */
-
-
 
 
 
 /* Geography Container */
-
   .geography-container,
   .therapies-container,
   .human-container {
@@ -794,7 +895,6 @@ div.p-div {
     max-width: 100%;
     margin: 0;
   }
-
 
   .geo-col-1 {
     display: flex;
@@ -899,33 +999,36 @@ div.p-div {
 
 }
 
+/* ******************************************************************************** */
+/* ******************************************************************************** */
+/* ********************************************************************************* */
+
 @media only screen and (min-width: 1025px) {
   
   h1.h1-header {
-    font-size: 5.6em;
+   font-size: 7em;
   }
 
   h3.h3-header {
-    font-size: 1.5em;
+    font-size: 2em;
   }
-
+  /* display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-wrap: wrap;
+  min-height: 112px;
+  max-width: 100%; */
 
   li.x-list > ul.x-ul {
     margin: auto;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    min-height: 50px;
+    justify-content: flex-end;
     max-width: 85%;
   }
-
 
   .geography-img,
   .therapies-img {
     max-width: 85%;
   }
-
-
 
   .geo-col-6,
   .geo-col-7 {

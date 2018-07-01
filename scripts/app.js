@@ -1,95 +1,145 @@
-// document.querySelector('h1').addEventListener('click', function() {
-//   document.querySelector('h1').style.display = 'none';
-//   const x = document.createElement('li');
-//   x.className = 'li-header';
-//   const y  = document.createElement('a');
-//   y.appendChild(document.createTextNode('new task'));
-//   x.appendChild(y);
-//   document.querySelector('ul').appendChild(x);
-// });
+// toggle phone menue icon
+document.querySelector('.phone-lines').addEventListener('click', togglePhoneMenu);
+function togglePhoneMenu() {
+  // toggle on-off icon
+  document.querySelector('.phone-lines').classList.toggle('phone-lines-off');
+  // toggle on-off icon line
+  document.querySelectorAll('.phone-line').forEach(function(line) {
+    line.classList.toggle('phone-line-off');
+  });
+  // toggle the x-list
+  document.querySelector('li.x-list').classList.toggle('x-list-off');
+}
+
+
+// toggle geography side menu
+document.querySelector('.geography-list').addEventListener('click', geographyFun);
+function geographyFun() {
+  document.querySelector('.ul-geography').classList.add('add-geography');
+}
+// toggle therapies side menu
+document.querySelector('.therapies-list').addEventListener('click', therapiesFun);
+function therapiesFun() {
+  document.querySelector('.ul-therapies').classList.add('add-therapies');
+}
+// toggle human side menu
+document.querySelector('.human-list').addEventListener('click', humanFun);
+function humanFun() {
+  document.querySelector('.ul-human').classList.add('add-human');
+}
+// toggle tourism side menu
+document.querySelector('.tourism-list').addEventListener('click', tourismFun);
+function tourismFun() {
+  document.querySelector('.ul-tourism').classList.add('add-tourism');
+}
+// toggle chemical side menu
+document.querySelector('.chemical-list').addEventListener('click', chemicalFun);
+function chemicalFun() {
+  document.querySelector('.ul-chemical').classList.add('add-chemical');
+}
+
+
+// hide geography ul when click outsied or when click on <a> therapies or on
+// <a> human or on <a> tourism or on <a> chemical
+document.body.addEventListener('click', removeGeoUl);
+function removeGeoUl(e) {
+  if (
+      e.target.classList.contains('div-header') ||
+      e.target.parentElement.classList.contains('div-header') ||
+      e.target.parentElement.parentElement.classList.contains('div-header') ||
+      e.target.parentElement.classList.contains('phone-lines') ||
+      e.target.parentElement.classList.contains('therapies-list') ||
+      e.target.parentElement.classList.contains('human-list') || 
+      e.target.parentElement.classList.contains('tourism-list') || 
+      e.target.parentElement.classList.contains('chemical-list') ||
+      e.target.parentElement.parentElement.classList.contains('ul-geography')
+  ) {
+    document.querySelector('.ul-geography').classList.remove('add-geography');
+  }
+} 
 
 
 
-// // const UIulHeader = document.querySelector('.ul-header');
-// const UIlistLines = document.querySelector('.ul-header li:first-child');
-// document.body.addEventListener('click', function(e) {
-//   if (e.target.parentElement.className == 'lines') {
-//     document.querySelector('.lines').remove();
-//     const UIdivOffLines = document.createElement('div');
-//     UIdivOffLines.className = 'lines off-lines';
-//     UIdivOffLines.innerHTML = 
-//     `
-//       <div class="line" style="position: absolute; transform: rotate(45deg); height: 5px;"></div>  
-//       <div class="line" style="position: absolute; transform: rotate(-45deg); height: 5px"></div>  
-
-//     `;
-//     UIlistLines.appendChild(UIdivOffLines);
-//     // UIulHeader.insertBefore(UIdivOffLines, UIulHeader.firstChild);
-
-
-
-//     // view the list items
-//     document.querySelectorAll('.ul-header a').forEach(function(link) {
-//       link.style.display = 'block';
-//     });
-//   }
-// });
-// // UIlines.forEach(function(line) {
-// //   line.addEventListener('click', function() {
-// //     UIdivLines.remove();
-// //     const UIdivOffLines = document.createElement('div');
-// //     UIdivOffLines.className = 'lines off-lines';
-// //     // const UIleftOffLine = document.createElement('div');
-// //     // UIleftOffLine.style.transform = 'rotate(45deg)';
-// //     // UIleftOffLine.style.position = 'absolute';
-// //     // UIleftOffLine.className = 'line';
-// //     // const UIrightOffLine = document.createElement('div');
-// //     // UIrightOffLine.style.transform = 'rotate(-45deg)';
-// //     // UIrightOffLine.style.position = 'absolute';
-// //     // UIrightOffLine.className = 'line';
-// //     // UIdivOffLines.appendChild(UIleftOffLine);
-// //     // UIdivOffLines.appendChild(UIrightOffLine);
-// //     // UIlistLines.appendChild(UIdivOffLines);
-// //     UIdivOffLines.innerHTML = 
-// //     `
-// //       <div class="line" style="position: absolute; transform: rotate(45deg);"></div>  
-// //       <div class="line" style="position: absolute; transform: rotate(-45deg);"></div>  
-
-// //     `;
-// //     UIlistLines.appendChild(UIdivOffLines);
-// //   });
-// // });
+// hide therapies ul when click outsied or when click on <a> geography or on
+// <a> human or on <a> tourism or on <a> chemical
+document.body.addEventListener('click', removeTherpUl);
+function removeTherpUl(e) {
+  if (
+      e.target.classList.contains('div-header') ||
+      e.target.parentElement.classList.contains('div-header') ||
+      e.target.parentElement.parentElement.classList.contains('div-header') ||
+      e.target.parentElement.classList.contains('phone-lines') ||
+      e.target.parentElement.classList.contains('geography-list') ||
+      e.target.parentElement.classList.contains('human-list') || 
+      e.target.parentElement.classList.contains('tourism-list') || 
+      e.target.parentElement.classList.contains('chemical-list')
+  ) {
+    document.querySelector('.ul-therapies').classList.remove('add-therapies');
+  }
+} 
 
 
-// document.body.addEventListener('click', function(e) {
-//   // if (e.target.parentElement.classList.contains('off-lines')) {
-//     if(e.target.parentElement.className == 'lines off-lines' || e.target.className == 'lines off-lines') {
-//       document.querySelector('.off-lines').remove();
-//       const UIdivOnLines = document.createElement('div');
-//       UIdivOnLines.className = 'lines';
-//       UIdivOnLines.innerHTML = 
-//       `
-//         <div class="line"></div>
-//         <div class="line"></div>
-//         <div class="line"></div>
-//         <div class="line"></div>
+// hide human ul when click outsied or when click on <a> geography or on
+// <a> therapies or on <a> tourism or on <a> chemical
+document.body.addEventListener('click', removeHumanUl);
+function removeHumanUl(e) {
+  if (
+      e.target.classList.contains('div-header') ||
+      e.target.parentElement.classList.contains('div-header') ||
+      e.target.parentElement.parentElement.classList.contains('div-header') ||
+      e.target.parentElement.classList.contains('phone-lines') ||
+      e.target.parentElement.classList.contains('geography-list') ||
+      e.target.parentElement.classList.contains('therapies-list') || 
+      e.target.parentElement.classList.contains('tourism-list') || 
+      e.target.parentElement.classList.contains('chemical-list')
+  ) {
+    document.querySelector('.ul-human').classList.remove('add-human');
+  }
+} 
 
-//       `;
-//       UIlistLines.appendChild(UIdivOnLines);
-//       // UIulHeader.insertBefore(UIdivOnLines, UIulHeader.firstChild);
 
+// hide tourism ul when click outsied or when click on <a> geography or on
+// <a> therapies or on <a> human or on <a> chemical
+document.body.addEventListener('click', removeTourismUl);
+function removeTourismUl(e) {
+  if (
+      e.target.classList.contains('div-header') ||
+      e.target.parentElement.classList.contains('div-header') ||
+      e.target.parentElement.parentElement.classList.contains('div-header') ||
+      e.target.parentElement.classList.contains('phone-lines') ||
+      e.target.parentElement.classList.contains('geography-list') ||
+      e.target.parentElement.classList.contains('therapies-list') || 
+      e.target.parentElement.classList.contains('human-list') || 
+      e.target.parentElement.classList.contains('chemical-list')
+  ) {
+    document.querySelector('.ul-tourism').classList.remove('add-tourism');
+  }
+}
 
-//       // hide the list items
-//       document.querySelectorAll('.ul-header a').forEach(function(link) {
-//       link.style.display = 'none';
-//     });
-
-//   }
-// });
+// hide chemical ul when click outsied or when click on <a> geography or on
+// <a> therapies or on <a> human or on <a> tourism
+document.body.addEventListener('click', removeChemUl);
+function removeChemUl(e) {
+  if (
+      e.target.classList.contains('div-header') ||
+      e.target.parentElement.classList.contains('div-header') ||
+      e.target.parentElement.parentElement.classList.contains('div-header') ||
+      e.target.parentElement.classList.contains('phone-lines') ||
+      e.target.parentElement.classList.contains('geography-list') ||
+      e.target.parentElement.classList.contains('therapies-list') || 
+      e.target.parentElement.classList.contains('human-list') || 
+      e.target.parentElement.classList.contains('tourism-list')
+  ) {
+    document.querySelector('.ul-chemical').classList.remove('add-chemical');
+  }
+}
 
 
 
-// event delegation
+
+
+
+// event delegation on media query min-width 769px
 document.body.addEventListener('click', toggleMenue);
 
 function toggleMenue(e) {
@@ -102,7 +152,7 @@ function toggleMenue(e) {
           e.target.classList.contains('side-chemical-link')
       ) {
         // toggle the menue icon list to applay the translate style 
-      document.querySelector('.ul-header > li:first-child').classList.toggle('lines-off');
+      document.querySelector('.ul-header > li:nth-child(2)').classList.toggle('lines-off');
           // toggle the menue icon lines to applay the off icon
       document.querySelector('.line:first-child').classList.toggle('first-line');
       document.querySelector('.line:nth-child(2)').classList.toggle('middle-line');
@@ -178,9 +228,6 @@ function recursiveFun() {
   imgIndex++;
   setTimeout(recursiveFun, 3000);
 }
-
-
-
 
 
 
@@ -374,7 +421,7 @@ function isFullyVisible (UIelement) {
 
 
 
-// media queries
+// // media queries
 
 // // creating a media query list object
 // let mql = window.matchMedia("(min-width: 769px)");
@@ -385,11 +432,11 @@ function isFullyVisible (UIelement) {
 
 // mqFunction(mql);
 // function mqFunction(x) {
-//   if (x.matches) {
-//     document.querySelector('.ul-header > li:first-child').style.display = 'none';
-//   } else {
-//     document.querySelector('.ul-header > li:first-child').style.display = 'block';
-//   }
+//   // if (x.matches) {
+//   //   document.querySelector('.ul-header > li:first-child').style.display = 'none';
+//   // } else {
+//   //   document.querySelector('.ul-header > li:first-child').style.display = 'block';
+//   // }
 // }
 
 
