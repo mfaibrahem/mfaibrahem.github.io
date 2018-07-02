@@ -1,15 +1,37 @@
-// toggle phone menue icon
-document.querySelector('.phone-lines').addEventListener('click', togglePhoneMenu);
-function togglePhoneMenu() {
-  // toggle on-off icon
-  document.querySelector('.phone-lines').classList.toggle('phone-lines-off');
-  // toggle on-off icon line
-  document.querySelectorAll('.phone-line').forEach(function(line) {
-    line.classList.toggle('phone-line-off');
-  });
-  // toggle the x-list
-  document.querySelector('li.x-list').classList.toggle('x-list-off');
-}
+// // toggle phone menue icon
+// document.querySelector('.phone-lines').addEventListener('click', togglePhoneMenu);
+// function togglePhoneMenu() {
+//   // toggle on-off icon
+//   document.querySelector('.phone-lines').classList.toggle('phone-lines-off');
+//   // toggle on-off icon line
+//   document.querySelectorAll('.phone-line').forEach(function(line) {
+//     line.classList.toggle('phone-line-off');
+//   });
+//   // toggle the x-list
+//   document.querySelector('li.x-list').classList.toggle('x-list-off');
+// }
+document.body.addEventListener('click', function(e) {
+  if(e.target.parentElement.classList.contains('phone-lines') ||
+    e.target.classList.contains('phone-lines')
+    ) {
+    document.querySelector('.phone-lines').classList.toggle('phone-lines-off');
+    document.querySelectorAll('.phone-line').forEach(function(line) {
+      line.classList.toggle('phone-line-off');
+    });
+    document.querySelector('li.x-list').classList.toggle('x-list-off');
+  }
+  else if (e.target.parentElement.parentElement.classList.contains('x-ul')) {
+    document.querySelector('li.x-list').classList.add('x-list-off');
+  }
+  else {
+    document.querySelector('.phone-lines').classList.remove('phone-lines-off');
+    document.querySelectorAll('.phone-line').forEach(function(line) {
+      line.classList.remove('phone-line-off');
+    });
+     document.querySelector('li.x-list').classList.remove('x-list-off');
+
+  }
+});
 
 
 // toggle geography side menu
