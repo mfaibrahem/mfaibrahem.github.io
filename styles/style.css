@@ -69,6 +69,15 @@ ul {
   padding: 0;
 }
 
+.on-top {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, .2);
+}
+
 div.div-header {
   height: 100vh;
   width: 100%;
@@ -687,10 +696,12 @@ div.p-div {
   }
 
   .svg-sun-container {
-    background: linear-gradient(to bottom, rgba(0, 0, 255, 0.459), white);
+    /* background: linear-gradient(to bottom, rgba(0, 0, 255, 0.459), white); */
+    background: linear-gradient(to right, #373B44, #4286f4);
   }
   .svg-moon-container {
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, .9));
+    /* background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, .9)); */
+    background: linear-gradient(to right, #0F2027, #203A43, #2C5364);
   }
   .svg-moon-container .cloud-g-small svg {
     stroke: rgb(163, 163, 163);
@@ -754,16 +765,16 @@ div.p-div {
 
   @keyframes full-sun {
     50% {
-      transform: translate(-100%, 0) rotate(-180deg) scale(1.1);
+      transform: translate(-100%, 0) rotate(-180deg) scale(1.5);
     }
     100% {
-      transform: translate(100%, 0) rotate(180deg) scale(1.3);
+      transform: translate(100%, 0) rotate(180deg) scale(1.7);
     }
   }
   
   @keyframes cloud {
     50% {
-      transform: scale(.6);
+      transform: scale(1.2);
     }
     100% {
       transform: translate(100% , 0) scale(.9);
@@ -899,7 +910,7 @@ div.p-div {
 
   div.header-text,
   div.header-text h3 {
-    color: #333;
+    color: #e1e1e1;
   }
 
   h1.h1-header {
@@ -1128,24 +1139,29 @@ div.p-div {
 
   .geography-container {
     color: #fff;
-    background: linear-gradient(to right, #373B44, #4286f4);
+    background: linear-gradient(to right, #11998e, #38ef7d);
   }
 
   .therapies-container {
     color: #fff;
     /* background: linear-gradient(to right, #4364F7, #6FB1FC); */
-    background: linear-gradient(to right, #11998e, #38ef7d);
+    background: linear-gradient(to right, #373B44, #4286f4);
   }
 
   .human-container {
-    color: #000;
-    background: linear-gradient(to right, #ee9ca7, #ffdde1)
+    color: #fff;
+    background: linear-gradient(to right, #0F2027, #203A43, #2C5364);
   }
 
   .human-container h2,
   .human-container h3 {
+    color: #fff;
+  }
+  .human-col-1,
+  .human-col-2 {
     color: #000;
   }
+
   .geo-col-1,
   .go-col-2,
   .geo-col-3,
