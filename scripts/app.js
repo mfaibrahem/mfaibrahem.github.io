@@ -55,10 +55,10 @@ function tourismFun() {
   document.querySelector('.ul-tourism').classList.add('add-tourism');
 }
 // toggle chemical side menu
-document.querySelector('.chemical-list').addEventListener('click', chemicalFun);
-function chemicalFun() {
-  document.querySelector('.ul-chemical').classList.add('add-chemical');
-}
+// document.querySelector('.chemical-list').addEventListener('click', chemicalFun);
+// function chemicalFun() {
+//   document.querySelector('.ul-chemical').classList.add('add-chemical');
+// }
 
 
 // hide geography ul when click outsied or when click on <a> therapies or on
@@ -201,7 +201,7 @@ function retrieveSidePanel(e) {
       document.querySelector('ul.ul-therapies').classList.remove('hide-side-panel');
       document.querySelector('ul.ul-human').classList.remove('hide-side-panel');
       document.querySelector('ul.ul-tourism').classList.remove('hide-side-panel');
-      document.querySelector('ul.ul-chemical').classList.remove('hide-side-panel');
+      // document.querySelector('ul.ul-chemical').classList.remove('hide-side-panel');
   }
 }
 
@@ -418,9 +418,13 @@ function scrolling() {
   if (isFullyVisible(UIh2Tourism)) {
     document.querySelector('.tourism-col-1 > div:nth-of-type(2)').classList.add('scroll-tourism-img');
     document.querySelector('.tourism-col-1 > div:nth-of-type(1) > p').classList.add('slide-right-text');
+    document.querySelector('.tourism-col-2').classList.add('slide-right-text');
+    document.querySelector('.tourism-col-3').classList.add('slide-right-text');
   } else {
     document.querySelector('.tourism-col-1 > div:nth-of-type(2)').classList.remove('scroll-tourism-img');
     document.querySelector('.tourism-col-1 > div:nth-of-type(1) > p').classList.remove('slide-right-text');
+    document.querySelector('.tourism-col-2').classList.remove('slide-right-text');
+    document.querySelector('.tourism-col-3').classList.remove('slide-right-text');
   }
 
 }
