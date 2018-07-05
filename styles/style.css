@@ -456,7 +456,8 @@ h3.h3-header {
 }
 
 .geography-img,
-.therapies-img {
+.therapies-img,
+.tourism-img {
   max-width: 90%;
   height: auto;
   margin: 0 0 0 1.5em;
