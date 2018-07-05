@@ -875,6 +875,7 @@ div.p-div {
   .right-footer p:nth-of-type(2) {
     display: flex;
     align-items: center;
+    justify-content: center;
   }
 
   .svg-footer {
@@ -1537,6 +1538,9 @@ div.p-div {
   .right-footer {
     flex: 1 60%;
     justify-content: flex-end;
+  }
+  .right-footer p:nth-of-type(2) {
+    justify-content: flex-start;
   }
 
 }
