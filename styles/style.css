@@ -1131,7 +1131,8 @@ div.p-div {
 /* Geography Container */
   .geography-container,
   .therapies-container,
-  .human-container {
+  .human-container,
+  .tourism-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -1152,6 +1153,11 @@ div.p-div {
   .human-container {
     color: #fff;
     background: linear-gradient(to right, #0F2027, #203A43, #2C5364);
+  }
+
+  .tourism-container {
+    color: #fff;
+    background: linear-gradient(to right, #CB356B, #BD3F32);
   }
 
   .human-container h2,
@@ -1182,14 +1188,17 @@ div.p-div {
     margin: 0;
   }
 
-  .geo-col-1 {
+  .geo-col-1,
+  .tourism-col-1 {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
   }
 
   .p-col-1-1,
-  .img-col-1 {
+  .img-col-1,
+  .tourism-col-1 > div:nth-of-type(1),
+  .tourism-col-1 > div:nth-of-type(2) {
     flex: 1 50%;
   }
 
@@ -1277,6 +1286,23 @@ div.p-div {
     100% {
       transform: translate(0, 20px) rotateY(10deg);
       opacity: .95;
+    }
+  }
+
+  /* scroll through tourism container */
+  /* scroll tourism image */
+  .scroll-tourism-img {
+    animation: tourism-image 2s ease-in-out both;
+  }
+  @keyframes tourism-image {
+    0% {
+      transform: rotate(10deg) translate(100px, 0) scale(1.2);
+    }
+    50% {
+      transform: rotate(-10deg) translate(-100px, 0) scale(.8);
+    }
+    100% {
+      transform: rotate(0) translate(0, 0) scale(1);
     }
   }
   /* *********************************************************** */

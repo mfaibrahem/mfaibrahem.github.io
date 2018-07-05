@@ -330,6 +330,7 @@ function scrolling() {
   const UIh2Teherapies = document.querySelector('h2#therapies-id');
   const UIh3Psoriasis = document.querySelector('h3#psoriasis-id');
   const UIh2Human = document.querySelector('h2#human-id');
+  const UIh2Tourism = document.querySelector('h2#tourism-id');
 
   // scroll through geography container elements
   if (isFullyVisible(UIh2Geography)) {
@@ -409,6 +410,17 @@ function scrolling() {
   }
   else {
     document.querySelector('.human-text').classList.remove('slid-bottom-text');
+  }
+
+  // scroll through tourism container
+
+  // tourism image and p
+  if (isFullyVisible(UIh2Tourism)) {
+    document.querySelector('.tourism-col-1 > div:nth-of-type(2)').classList.add('scroll-tourism-img');
+    document.querySelector('.tourism-col-1 > div:nth-of-type(1) > p').classList.add('slide-right-text');
+  } else {
+    document.querySelector('.tourism-col-1 > div:nth-of-type(2)').classList.remove('scroll-tourism-img');
+    document.querySelector('.tourism-col-1 > div:nth-of-type(1) > p').classList.remove('slide-right-text');
   }
 
 }
