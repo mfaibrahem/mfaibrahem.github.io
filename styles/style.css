@@ -457,7 +457,8 @@ h3.h3-header {
 
 .geography-img,
 .therapies-img,
-.tourism-img {
+.tourism-img,
+.recession-img {
   max-width: 90%;
   height: auto;
   margin: 0 0 0 1.5em;
@@ -822,14 +823,16 @@ div.p-div {
     animation-play-state: paused;
   }
 
-  .tourism-container svg {
+  .tourism-container svg,
+  .recession-container svg {
     display: none;
   }
  
   .geography-container,
   .therapies-container,
   .human-container,
-  .tourism-container
+  .tourism-container,
+  .recession-container
   {
     color: #333;
   } 
@@ -1141,7 +1144,8 @@ div.p-div {
   .geography-container,
   .therapies-container,
   .human-container,
-  .tourism-container {
+  .tourism-container,
+  .recession-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -1167,6 +1171,11 @@ div.p-div {
   .tourism-container {
     color: #fff;
     background: linear-gradient(to right, #CB356B, #BD3F32);
+  }
+
+  .recession-container {
+    color: #fff;
+    background: linear-gradient(to right, #480048, #C04848);
   }
 
   .human-container h2,
@@ -1198,7 +1207,8 @@ div.p-div {
   }
 
   .geo-col-1,
-  .tourism-col-1 {
+  .tourism-col-1,
+  .recession-col-1 {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -1207,7 +1217,9 @@ div.p-div {
   .p-col-1-1,
   .img-col-1,
   .tourism-col-1 > div:nth-of-type(1),
-  .tourism-col-1 > div:nth-of-type(2) {
+  .tourism-col-1 > div:nth-of-type(2),
+  .recession-col-1 > div:nth-of-type(1),
+  .recession-col-1 > div:nth-of-type(2) {
     flex: 1 50%;
   }
 
@@ -1221,7 +1233,9 @@ div.p-div {
   .human-col-1,
   .human-col-2,
   .tourism-col-2,
-  .tourism-col-3
+  .tourism-col-3,
+  .tourism-col-4,
+  .tourism-col-5
   {
     flex: 1 100%;
   }
@@ -1233,21 +1247,34 @@ div.p-div {
   }
 
   .tourism-col-2 > div:nth-of-type(1),
-  .tourism-col-3 >div:nth-of-type(1) {
+  .tourism-col-3 > div:nth-of-type(1),
+  .tourism-col-4 > div:nth-of-type(1),
+  .tourism-col-5 > div:nth-of-type(1),
+  .recession-col-1 > div:nth-of-type(1) {
     display: flex;
     flex-wrap: wrap;
     align-items: flex-start;
   }
   .tourism-col-3 > div:nth-of-type(1) > div:nth-of-type(1),
-  .tourism-col-3 > div:nth-of-type(1) > div:nth-of-type(2) {
+  .tourism-col-3 > div:nth-of-type(1) > div:nth-of-type(2),
+  .tourism-col-4 > div:nth-of-type(1) > div:nth-of-type(1),
+  .tourism-col-4 > div:nth-of-type(1) > div:nth-of-type(2),
+  .tourism-col-5 > div:nth-of-type(1) > div:nth-of-type(1),
+  .recession-col-1 > div:nth-of-type(1) > div:nth-of-type(1),
+  .recession-col-1 > div:nth-of-type(1) > div:nth-of-type(2)
+   {
     display: flex;
     align-items: flex-start;
     flex: 1 100%;
   }
-  .tourism-col-3 p {
+  .tourism-col-3 p,
+  .tourism-col-4 p,
+  .tourism-col-5 p,
+  .recession-col-1 p {
     flex: 1;
   }
-  .tourism-container svg {
+  .tourism-container svg,
+  .recession-container svg {
     display: block;
   }
    .svg-pen {
@@ -1270,14 +1297,14 @@ div.p-div {
     }
   }
   
-  .tourism-col-2 > div:nth-of-type(1) a,
-  .tourism-col-2 > div:nth-of-type(1) a:visited {
-    color: #333; 
+  a.wiki,
+  a.wiki:visited {
+    color: #fff; 
     text-decoration: underline; 
     font-weight: bold; 
     font-size: .9em"
   }
-  .tourism-col-2 > div:nth-of-type(1) a:hover {
+  a.wiki:hover {
     color: #ccc;
     font-size: 1em;
     transition: .3s;
@@ -1354,7 +1381,8 @@ div.p-div {
 
   /* scroll through tourism container */
   /* scroll tourism image */
-  .scroll-tourism-img {
+  .scroll-tourism-img,
+  .scroll-recession-img {
     animation: tourism-image 2s ease-in-out both;
   }
   @keyframes tourism-image {

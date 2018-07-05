@@ -74,7 +74,6 @@ function removeGeoUl(e) {
       e.target.parentElement.classList.contains('therapies-list') ||
       e.target.parentElement.classList.contains('human-list') || 
       e.target.parentElement.classList.contains('tourism-list') || 
-      e.target.parentElement.classList.contains('chemical-list') ||
       e.target.parentElement.parentElement.classList.contains('ul-geography')
   ) {
     document.querySelector('.ul-geography').classList.remove('add-geography');
@@ -115,8 +114,7 @@ function removeHumanUl(e) {
       e.target.parentElement.classList.contains('phone-lines') ||
       e.target.parentElement.classList.contains('geography-list') ||
       e.target.parentElement.classList.contains('therapies-list') || 
-      e.target.parentElement.classList.contains('tourism-list') || 
-      e.target.parentElement.classList.contains('chemical-list')
+      e.target.parentElement.classList.contains('tourism-list')
   ) {
     document.querySelector('.ul-human').classList.remove('add-human');
   }
@@ -135,8 +133,7 @@ function removeTourismUl(e) {
       e.target.parentElement.classList.contains('phone-lines') ||
       e.target.parentElement.classList.contains('geography-list') ||
       e.target.parentElement.classList.contains('therapies-list') || 
-      e.target.parentElement.classList.contains('human-list') || 
-      e.target.parentElement.classList.contains('chemical-list')
+      e.target.parentElement.classList.contains('human-list')
   ) {
     document.querySelector('.ul-tourism').classList.remove('add-tourism');
   }
@@ -144,22 +141,22 @@ function removeTourismUl(e) {
 
 // hide chemical ul when click outsied or when click on <a> geography or on
 // <a> therapies or on <a> human or on <a> tourism
-document.body.addEventListener('click', removeChemUl);
-function removeChemUl(e) {
-  if (
-      e.target.classList.contains('div-header') ||
-      e.target.parentElement.classList.contains('div-header') ||
-      e.target.parentElement.parentElement.classList.contains('div-header') ||
-      e.target.parentElement.parentElement.parentElement.classList.contains('li-header') ||
-      e.target.parentElement.classList.contains('phone-lines') ||
-      e.target.parentElement.classList.contains('geography-list') ||
-      e.target.parentElement.classList.contains('therapies-list') || 
-      e.target.parentElement.classList.contains('human-list') || 
-      e.target.parentElement.classList.contains('tourism-list')
-  ) {
-    document.querySelector('.ul-chemical').classList.remove('add-chemical');
-  }
-}
+// document.body.addEventListener('click', removeChemUl);
+// function removeChemUl(e) {
+//   if (
+//       e.target.classList.contains('div-header') ||
+//       e.target.parentElement.classList.contains('div-header') ||
+//       e.target.parentElement.parentElement.classList.contains('div-header') ||
+//       e.target.parentElement.parentElement.parentElement.classList.contains('li-header') ||
+//       e.target.parentElement.classList.contains('phone-lines') ||
+//       e.target.parentElement.classList.contains('geography-list') ||
+//       e.target.parentElement.classList.contains('therapies-list') || 
+//       e.target.parentElement.classList.contains('human-list') || 
+//       e.target.parentElement.classList.contains('tourism-list')
+//   ) {
+//     document.querySelector('.ul-chemical').classList.remove('add-chemical');
+//   }
+// }
 
 
 // toggle side panel when clicked
@@ -169,8 +166,7 @@ function hideSidePanel(e) {
       e.target.classList.contains('side-geography-link') ||
       e.target.classList.contains('side-therapies-link') ||
       e.target.classList.contains('side-human-link') ||
-      e.target.classList.contains('side-tourism-link') ||
-      e.target.classList.contains('side-chemical-link')  
+      e.target.classList.contains('side-tourism-link') 
     ) {
        // toggle the side panel (removes it when any link is clicked)
        // but there is a problem after any link on the side panel
@@ -189,7 +185,7 @@ function hideSidePanel(e) {
       document.querySelector('ul.ul-therapies').classList.toggle('hide-side-panel');
       document.querySelector('ul.ul-human').classList.toggle('hide-side-panel');
       document.querySelector('ul.ul-tourism').classList.toggle('hide-side-panel');
-      document.querySelector('ul.ul-chemical').classList.toggle('hide-side-panel');
+      // document.querySelector('ul.ul-chemical').classList.toggle('hide-side-panel');
   }
 }
 
@@ -331,6 +327,7 @@ function scrolling() {
   const UIh3Psoriasis = document.querySelector('h3#psoriasis-id');
   const UIh2Human = document.querySelector('h2#human-id');
   const UIh2Tourism = document.querySelector('h2#tourism-id');
+  const UIh2Recession = document.querySelector('h2#recession-id');
 
   // scroll through geography container elements
   if (isFullyVisible(UIh2Geography)) {
@@ -420,11 +417,23 @@ function scrolling() {
     document.querySelector('.tourism-col-1 > div:nth-of-type(1) > p').classList.add('slide-right-text');
     document.querySelector('.tourism-col-2').classList.add('slide-right-text');
     document.querySelector('.tourism-col-3').classList.add('slide-right-text');
+    document.querySelector('.tourism-col-4').classList.add('slide-right-text');
+    document.querySelector('.tourism-col-5').classList.add('slide-right-text');
   } else {
     document.querySelector('.tourism-col-1 > div:nth-of-type(2)').classList.remove('scroll-tourism-img');
     document.querySelector('.tourism-col-1 > div:nth-of-type(1) > p').classList.remove('slide-right-text');
     document.querySelector('.tourism-col-2').classList.remove('slide-right-text');
     document.querySelector('.tourism-col-3').classList.remove('slide-right-text');
+    document.querySelector('.tourism-col-4').classList.remove('slide-right-text');
+    document.querySelector('.tourism-col-5').classList.remove('slide-right-text');
+  }
+  // recession image and p
+  if (isFullyVisible(UIh2Recession)) {
+    document.querySelector('.recession-col-1 > div:nth-of-type(2)').classList.add('scroll-recession-img');
+    document.querySelector('.recession-col-1 > div:nth-of-type(1)').classList.add('slide-right-text');
+  } else {
+    document.querySelector('.recession-col-1 > div:nth-of-type(2)').classList.remove('scroll-recession-img');
+    document.querySelector('.recession-col-1 > div:nth-of-type(1)').classList.remove('slide-right-text');
   }
 
 }
