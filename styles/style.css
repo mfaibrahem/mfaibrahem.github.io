@@ -842,7 +842,106 @@ div.p-div {
 
 
 
+  .footer {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 3em 2em;
+    color: #e91e63;
+    font-size: .9em;
+    background: linear-gradient(to right, #0f0c29, #24243e);
+  }
 
+  .left-footer {
+    flex: 1 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .right-footer {
+    flex: 1 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .div-email {
+    display: flex;
+    align-items: center;
+  }
+  .links {
+    margin-top: .5em;
+  }
+  .right-footer p:nth-of-type(2) {
+    display: flex;
+    align-items: center;
+  }
+
+  .svg-footer {
+    width: 24px;
+    height: 24px;
+    margin-left: 12px;
+  }
+
+  .love svg {
+    width: 22px;
+    height: 22px;
+    margin: 0 3px;
+    animation: love-animation 1.5s linear infinite;
+  }
+  @keyframes love-animation {
+    0% {
+      transform: scale(1);
+    }
+    30% {
+      transform: scale(1);
+    }
+    45% {
+      transform: scale(1.1);
+    }
+    60% {
+      transform: scale(1);
+    }
+    70% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  .love svg path {
+    stroke: #e91e63;
+    stroke-width: 1px;
+    fill: #e91e63;
+  }
+
+  .div-email svg path {
+    fill: #e91e63;
+  }
+  .div-email span {
+    margin-left: 6px;
+    color: #e91e63;
+  }
+  .svg-footer path{
+    fill: #e91e63;
+    transition: .5s;
+  }
+  .footer a:hover .facebook path {
+    fill: #4267b2;
+    transform: translate(0, -3px);
+  }
+  .footer a:hover .twitter path {
+    fill: #1DA1F2 ;
+    transform: translate(0, -3px);
+  }
+  .footer a:hover .instagram path {
+    fill: #fdb956;
+    transform: translate(0, -3px);
+  }
+  .footer a:hover .gplus path {
+    fill: red;
+    transform: translate(0, -3px);
+  }
 
 
 
@@ -1145,7 +1244,8 @@ div.p-div {
   .therapies-container,
   .human-container,
   .tourism-container,
-  .recession-container {
+  .recession-container
+   {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -1168,15 +1268,23 @@ div.p-div {
     background: linear-gradient(to right, #0F2027, #203A43, #2C5364);
   }
 
-  .tourism-container {
+  /* .tourism-container {
     color: #fff;
     background: linear-gradient(to right, #CB356B, #BD3F32);
-  }
+  } */
 
+  .tourism-container,
   .recession-container {
     color: #fff;
     background: linear-gradient(to right, #480048, #C04848);
   }
+
+
+
+
+
+
+
 
   .human-container h2,
   .human-container h3 {
@@ -1418,7 +1526,23 @@ div.p-div {
     height: 1.5em;
   }
 
+  .footer {
+    padding: 3em 12em;
+    justify-content: space-between;
+  }
+  .left-footer {
+    flex: 1 40%;
+    align-items: stretch;
+  }
+  .right-footer {
+    flex: 1 60%;
+    justify-content: flex-end;
+  }
+
 }
+
+
+
 
 /* ******************************************************************************** */
 /* ******************************************************************************** */
@@ -1453,7 +1577,9 @@ div.p-div {
     max-width: 85%;
   }
 
-
+  .footer {
+    padding: 4em 14em;
+  }
   
 }
 
