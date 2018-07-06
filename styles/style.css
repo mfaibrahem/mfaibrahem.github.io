@@ -848,7 +848,7 @@ div.p-div {
     flex-wrap: wrap;
     justify-content: center;
     padding: 3em 2em;
-    color: #e91e63;
+    color: #fff;
     font-size: .9em;
     background: linear-gradient(to right, #0f0c29, #24243e);
   }
@@ -917,11 +917,11 @@ div.p-div {
   }
 
   .div-email svg path {
-    fill: #e91e63;
+    fill: #fff;
   }
   .div-email span {
     margin-left: 6px;
-    color: #e91e63;
+    /* color: #e91e63; */
   }
   .svg-footer path{
     fill: #e91e63;
