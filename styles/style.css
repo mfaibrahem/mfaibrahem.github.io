@@ -467,8 +467,8 @@ h3.h3-header {
 }
 
 div.p-div {
-  padding: 0 1.5em 0;
-  max-width: 95%;
+  padding: 0 .7em 0;
+  max-width: 100%;
 }
 
 .geography-sub-header {
@@ -1040,7 +1040,10 @@ div.p-div {
   }
   /* end main h1 and sub h3 */
 
-    
+  div.p-div {
+    padding: 0 1.5em 0;
+    max-width: 95%;
+  }
 
   
 
