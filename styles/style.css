@@ -979,6 +979,23 @@ div.p-div {
 /* **************************************************************************************************** */
 
 
+@media only screen and (min-width: 415px) {
+  h1.h1-header {
+    font-size: 3.7em;
+  }
+  h3.h3-header {
+    font-size: 1.3em;
+  }
+}
+@media only screen and (min-width: 600px) {
+  h1.h1-header {
+    font-size: 4.5em;
+  }
+  h3.h3-header {
+    font-size: 1.5em;
+  }
+}
+
 @media only screen and (min-width: 768px) {
 
   body {
@@ -1033,10 +1050,10 @@ div.p-div {
   }
 
   h1.h1-header {
-    font-size: 5em;
+    font-size: 5.4em;
   }
   h3.h3-header {
-    font-size: 1.5em;
+    font-size: 1.48em;
   }
   /* end main h1 and sub h3 */
 
