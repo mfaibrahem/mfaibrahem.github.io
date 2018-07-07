@@ -20,6 +20,13 @@ document.body.addEventListener('click', function(e) {
     });
     document.querySelector('li.x-list').classList.toggle('x-list-off');
   }
+  else if (e.target.parentElement.classList.contains('recession-list')) {
+    document.querySelector('.phone-lines').classList.remove('phone-lines-off');
+    document.querySelectorAll('.phone-line').forEach(function(line) {
+      line.classList.remove('phone-line-off');
+    });
+     document.querySelector('li.x-list').classList.remove('x-list-off');
+  }
   else if (e.target.parentElement.parentElement.classList.contains('x-ul')) {
     document.querySelector('li.x-list').classList.add('x-list-off');
   }
@@ -74,6 +81,7 @@ function removeGeoUl(e) {
       e.target.parentElement.classList.contains('therapies-list') ||
       e.target.parentElement.classList.contains('human-list') || 
       e.target.parentElement.classList.contains('tourism-list') || 
+      e.target.parentElement.classList.contains('recession-list') ||
       e.target.parentElement.parentElement.classList.contains('ul-geography')
   ) {
     document.querySelector('.ul-geography').classList.remove('add-geography');
@@ -95,7 +103,7 @@ function removeTherpUl(e) {
       e.target.parentElement.classList.contains('geography-list') ||
       e.target.parentElement.classList.contains('human-list') || 
       e.target.parentElement.classList.contains('tourism-list') || 
-      e.target.parentElement.classList.contains('chemical-list')
+      e.target.parentElement.classList.contains('recession-list')
   ) {
     document.querySelector('.ul-therapies').classList.remove('add-therapies');
   }
@@ -114,7 +122,8 @@ function removeHumanUl(e) {
       e.target.parentElement.classList.contains('phone-lines') ||
       e.target.parentElement.classList.contains('geography-list') ||
       e.target.parentElement.classList.contains('therapies-list') || 
-      e.target.parentElement.classList.contains('tourism-list')
+      e.target.parentElement.classList.contains('tourism-list') ||
+      e.target.parentElement.classList.contains('recession-list')
   ) {
     document.querySelector('.ul-human').classList.remove('add-human');
   }
@@ -122,7 +131,7 @@ function removeHumanUl(e) {
 
 
 // hide tourism ul when click outsied or when click on <a> geography or on
-// <a> therapies or on <a> human or on <a> chemical
+// <a> therapies or on <a> human or on <a> recession
 document.body.addEventListener('click', removeTourismUl);
 function removeTourismUl(e) {
   if (
@@ -133,11 +142,13 @@ function removeTourismUl(e) {
       e.target.parentElement.classList.contains('phone-lines') ||
       e.target.parentElement.classList.contains('geography-list') ||
       e.target.parentElement.classList.contains('therapies-list') || 
-      e.target.parentElement.classList.contains('human-list')
+      e.target.parentElement.classList.contains('human-list') ||
+      e.target.parentElement.classList.contains('recession-list')
   ) {
     document.querySelector('.ul-tourism').classList.remove('add-tourism');
   }
 }
+
 
 // hide chemical ul when click outsied or when click on <a> geography or on
 // <a> therapies or on <a> human or on <a> tourism
