@@ -110,7 +110,7 @@ div.div-header {
 }
 
 .phone-lines-off {
-  margin-right: calc(1em + 57px);
+  margin-right: calc(1em + 48px);
 }
 
 .phone-line {
@@ -159,7 +159,7 @@ div.div-header {
   position: absolute;
   top: -20px;
   /* right: calc(57px + 1em); */
-  right: 57px;
+  right: 49px;
   border-bottom: 20px solid rgba(0, 0, 0, .7);
   border-right: 15px solid transparent;
   border-left: 15px solid transparent;
